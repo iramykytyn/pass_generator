@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7N-8Q-Ee7" userLabel="Password Text">
-                                <rect key="frame" x="150" y="138" width="301" height="44"/>
+                                <rect key="frame" x="20" y="138" width="560" height="44"/>
                                 <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="oDi-H0-pWZ"/>
@@ -44,15 +44,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Kb-pH-kWc">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Kb-pH-kWc">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="j8B-CS-5M7"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem systemItem="action" id="bTX-ov-JHw">
                                         <connections>
                                             <action selector="onShare:" destination="RuF-B1-JcM" id="8ev-jn-bJt"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Generate New Password" id="Ad7-7v-qjy">
+                                    <barButtonItem title="Generate New Password" width="513" id="Ad7-7v-qjy">
                                         <connections>
                                             <action selector="onGeneratePassword:" destination="RuF-B1-JcM" id="YOR-o9-lBO"/>
                                         </connections>
@@ -67,9 +70,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="o7N-8Q-Ee7" secondAttribute="trailing" constant="149" id="0B3-W7-Yo4"/>
+                            <constraint firstAttribute="trailing" secondItem="6Kb-pH-kWc" secondAttribute="trailing" id="3eh-sx-yXz"/>
+                            <constraint firstItem="DiA-Xr-bbw" firstAttribute="top" secondItem="6Kb-pH-kWc" secondAttribute="bottom" id="6ca-Ig-3r1"/>
                             <constraint firstItem="o7N-8Q-Ee7" firstAttribute="top" secondItem="Gcy-fr-Tkl" secondAttribute="bottom" constant="74" id="AZR-fy-i5K"/>
-                            <constraint firstItem="o7N-8Q-Ee7" firstAttribute="leading" secondItem="EuL-iu-IbH" secondAttribute="leading" constant="150" id="net-Nz-9WA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o7N-8Q-Ee7" secondAttribute="trailing" id="KDh-fY-Y4B"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="o7N-8Q-Ee7" secondAttribute="leading" id="qBL-ZO-8Hy"/>
+                            <constraint firstItem="6Kb-pH-kWc" firstAttribute="leading" secondItem="EuL-iu-IbH" secondAttribute="leading" id="qhK-Ct-6gl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Password Generator" id="92q-GH-ye5">
