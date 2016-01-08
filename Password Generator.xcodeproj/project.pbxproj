@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC3C592D1C3FF29300E2F4E9 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C592C1C3FF29300E2F4E9 /* SettingsController.swift */; };
 		CCF5C8291C1A9DD50090EDEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5C8281C1A9DD50090EDEA /* AppDelegate.swift */; };
 		CCF5C82B1C1A9DD50090EDEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5C82A1C1A9DD50090EDEA /* ViewController.swift */; };
 		CCF5C82E1C1A9DD50090EDEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF5C82C1C1A9DD50090EDEA /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC3C592C1C3FF29300E2F4E9 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		CCF5C8251C1A9DD50090EDEA /* Password Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF5C8281C1A9DD50090EDEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCF5C82A1C1A9DD50090EDEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				CCF5C8281C1A9DD50090EDEA /* AppDelegate.swift */,
+				CC3C592C1C3FF29300E2F4E9 /* SettingsController.swift */,
 				CCF5C82A1C1A9DD50090EDEA /* ViewController.swift */,
 				CCF5C82C1C1A9DD50090EDEA /* Main.storyboard */,
 				CCF5C82F1C1A9DD50090EDEA /* Assets.xcassets */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC3C592D1C3FF29300E2F4E9 /* SettingsController.swift in Sources */,
 				CCF5C82B1C1A9DD50090EDEA /* ViewController.swift in Sources */,
 				CCF5C8291C1A9DD50090EDEA /* AppDelegate.swift in Sources */,
 			);
@@ -412,6 +416,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Password Generator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"MTL_ENABLE_DEBUG_INFO[arch=*]" = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "iram.Password-Generator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -484,6 +489,7 @@
 				CCF5C84F1C1A9DD50090EDEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CCF5C8501C1A9DD50090EDEA /* Build configuration list for PBXNativeTarget "Password GeneratorTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +498,7 @@
 				CCF5C8521C1A9DD50090EDEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CCF5C8531C1A9DD50090EDEA /* Build configuration list for PBXNativeTarget "Password GeneratorUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +507,7 @@
 				CCF5C8551C1A9DD50090EDEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
