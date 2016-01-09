@@ -6,9 +6,19 @@
 //  Copyright © 2015 IraM. All rights reserved.
 //
 
+//  TO IMPLEMENT
+/*  1. Memoiable password
+    2. Password range in TextField
+    3. Share button -> to copy pass + send by mail
+*/
+
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate{
+    
+    //MARK: Global Varaibles
+    let settings = Settings.sharedInstance
+    
     
     //MARK: Properties
     @IBOutlet weak var passwordText: UILabel!
@@ -16,6 +26,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
     //MARK: Actions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.settings.Character = true
+        self.settings.Length = 6
+        self.settings.Memoriable = true
+        self.settings.Special = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,20 +61,16 @@ class ViewController: UIViewController, UITextFieldDelegate{
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       
-        }
+    }
     
     @IBAction func onStop(sender: AnyObject) {
         passwordText.text = nil
     }
     
     func GeneratePassword() -> String {
-        var passwordStr = ""
-        var length = 6
-        var Spec:Bool = true
-        var Char:Bool = true
-        
-        if (Spec && Char == true) {
+    var passwordStr = String()
+    var length = self.settings.Length
+        if (self.settings.Special && self.settings.Character == true) {
             repeat {
                 switch arc4random_uniform(3) {
                 case 0:
@@ -75,7 +86,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
                 length -= 1
             } while (length > 0)
         } else {
-            if (Char == true) {
+            if (self.settings.Character == true) {
                 repeat {
                     if arc4random_uniform(2) == 0 {
                         passwordStr += genChar()
@@ -118,6 +129,21 @@ class ViewController: UIViewController, UITextFieldDelegate{
         let number = 35 + Int(arc4random_uniform(UInt32(38 - 35 + 1)))
         passwordStr.append(Character(UnicodeScalar(number))) // += number as Character
         return passwordStr
+    }
+    
+    func getRandNoun() -> String {
+        var noun = String()
+        
+        
+        
+        return noun
+        
+    }
+    
+    func getRandAdjective() -> String {
+        var adjective = String()
+        
+        return adjective
     }
     
 }

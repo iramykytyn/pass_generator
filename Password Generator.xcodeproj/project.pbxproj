@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC3C592D1C3FF29300E2F4E9 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C592C1C3FF29300E2F4E9 /* SettingsController.swift */; };
+		CC7ADB121C415F9D00F3831E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7ADB111C415F9D00F3831E /* Settings.swift */; };
 		CCF5C8291C1A9DD50090EDEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5C8281C1A9DD50090EDEA /* AppDelegate.swift */; };
 		CCF5C82B1C1A9DD50090EDEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5C82A1C1A9DD50090EDEA /* ViewController.swift */; };
 		CCF5C82E1C1A9DD50090EDEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF5C82C1C1A9DD50090EDEA /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		CC3C592C1C3FF29300E2F4E9 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		CC7ADB111C415F9D00F3831E /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ../Settings.swift; sourceTree = "<group>"; };
 		CCF5C8251C1A9DD50090EDEA /* Password Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF5C8281C1A9DD50090EDEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCF5C82A1C1A9DD50090EDEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				CCF5C8281C1A9DD50090EDEA /* AppDelegate.swift */,
+				CC7ADB111C415F9D00F3831E /* Settings.swift */,
 				CC3C592C1C3FF29300E2F4E9 /* SettingsController.swift */,
 				CCF5C82A1C1A9DD50090EDEA /* ViewController.swift */,
 				CCF5C82C1C1A9DD50090EDEA /* Main.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				CC3C592D1C3FF29300E2F4E9 /* SettingsController.swift in Sources */,
 				CCF5C82B1C1A9DD50090EDEA /* ViewController.swift in Sources */,
+				CC7ADB121C415F9D00F3831E /* Settings.swift in Sources */,
 				CCF5C8291C1A9DD50090EDEA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
