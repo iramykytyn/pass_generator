@@ -18,6 +18,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
     //MARK: Global Varaibles
     let settings = Settings.sharedInstance
+    var Nouns:[String]!
+    var Adjectives:[String]!
     
     
     //MARK: Properties
@@ -31,7 +33,13 @@ class ViewController: UIViewController, UITextFieldDelegate{
         self.settings.Length = 6
         self.settings.Memoriable = true
         self.settings.Special = true
+        
+        Nouns = putWordsToString("/Users/iram/Downloads/nouns.txt")
+        Adjectives = putWordsToString("/Users/iram/Downloads/adjectives.txt")
+        
+        print(Adjectives)
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -70,39 +78,47 @@ class ViewController: UIViewController, UITextFieldDelegate{
     func GeneratePassword() -> String {
     var passwordStr = String()
     var length = self.settings.Length
-        if (self.settings.Special && self.settings.Character == true) {
-            repeat {
-                switch arc4random_uniform(3) {
-                case 0:
-                    passwordStr += genChar()
-                case 1:
-                    passwordStr += genNumb()
-                case 2:
-                    passwordStr += genSpec()
-                default:
-                    passwordStr += genNumb()
-                    print("Something went wrong!")
-                }
-                length -= 1
-            } while (length > 0)
+        
+        if self.settings.Memoriable == true {
+            passwordStr += getRandAdjective()
+            passwordStr += genSpec()
+            passwordStr += getRandNoun()
+            passwordStr += genNumb()
         } else {
-            if (self.settings.Character == true) {
+            if (self.settings.Special && self.settings.Character == true) {
                 repeat {
-                    if arc4random_uniform(2) == 0 {
+                    switch arc4random_uniform(3) {
+                    case 0:
                         passwordStr += genChar()
-                    } else {
+                    case 1:
                         passwordStr += genNumb()
+                    case 2:
+                        passwordStr += genSpec()
+                    default:
+                        passwordStr += genNumb()
+                        print("Something went wrong!")
                     }
                     length -= 1
                 } while (length > 0)
             } else {
-                repeat {
-                    passwordStr += genNumb()
-                    length -= 1
-                } while (length > 0)
+                if (self.settings.Character == true) {
+                    repeat {
+                        if arc4random_uniform(2) == 0 {
+                            passwordStr += genChar()
+                        } else {
+                            passwordStr += genNumb()
+                        }
+                        length -= 1
+                    } while (length > 0)
+                } else {
+                    repeat {
+                        passwordStr += genNumb()
+                        length -= 1
+                    } while (length > 0)
+                }
             }
+
         }
-        
         return passwordStr
     }
     
@@ -131,17 +147,35 @@ class ViewController: UIViewController, UITextFieldDelegate{
         return passwordStr
     }
     
+    func putWordsToString(filename: String) -> [String]? {
+        do{
+            let content = try String(contentsOfFile:filename, encoding: NSUTF8StringEncoding)
+
+            let arrrOfContents = content.componentsSeparatedByString(", ")
+            return arrrOfContents
+        } catch _ as NSError {
+            return nil
+        }
+        
+      //  return content
+    }
+    
+    
     func getRandNoun() -> String {
         var noun = String()
+        let length = Nouns.count
         
-        
-        
+        noun = Nouns[Int(arc4random_uniform(UInt32(length)))]
+        noun.replaceRange(noun.startIndex...noun.startIndex, with: String(noun[noun.startIndex]).capitalizedString)
         return noun
-        
     }
     
     func getRandAdjective() -> String {
         var adjective = String()
+        let length = Adjectives.count
+        
+        adjective = Adjectives[Int(arc4random_uniform(UInt32(length)))]
+        adjective.replaceRange(adjective.startIndex...adjective.startIndex, with: String(adjective[adjective.startIndex]).capitalizedString)
         
         return adjective
     }
